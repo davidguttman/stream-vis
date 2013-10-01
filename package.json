@@ -4,7 +4,8 @@
   "description": "Visualize your streams with Browserify!",
   "main": "index.js",
   "scripts": {
-    "example": "node_modules/.bin/beefy example/index.js --open"
+    "example": "node_modules/.bin/beefy example/index.js --open",
+    "test": "node_modules/.bin/beefy test/basic.js --open"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,31 @@
   },
   "dependencies": {
     "through": "~2.3.4"
+  },
+  "devDependencies": {
+    "tape": "~1.1.1",
+    "beefy": "~0.4.4",
+    "browserify": "~2.33.1"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": {
+      "ie": [
+        8,
+        9
+      ],
+      "firefox": [
+        13
+      ],
+      "chrome": [
+        20
+      ],
+      "safari": [
+        5.1
+      ],
+      "opera": [
+        12
+      ]
+    }
   }
 }
