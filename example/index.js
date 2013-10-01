@@ -1,13 +1,12 @@
 var MouseStream = require('./mouse-stream')
-var Vis = require('../')
+var streamVis = require('../')
 
 var stream = MouseStream()
 
-var w = window.innerWidth/4,
+var w = window.innerWidth/2,
     h = window.innerHeight/4,
-    x = window.innerWidth/2 - w/2,
-    y = window.innerHeight/2 - h/2
+    x = window.innerWidth/2,
+    y = window.innerHeight/2
 
-var vis = Vis({x:x,y:y,w:w,h:h})
-stream.pipe(vis)
+var vis = streamVis(stream, {x:x,y:y,w:w,h:h})
 document.body.appendChild(vis.el)

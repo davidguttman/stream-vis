@@ -1,24 +1,13 @@
 var through = require('through')
 
-module.exports = function(opts) {
-  var stream = through(onData)
+module.exports = function(stream, opts) {
   var vis = new Vis(opts)
-
-  function onData (data) {
-    this.emit('data', data)
-  }
 
   stream.on('data', function(data) {
     vis.onData(data)
   })
 
-  stream.on('pipe', function(src) {
-    console.log('src', src)
-  })
-
-  stream.el = vis.el
-
-  return stream
+  return vis
 }
 
 function Vis (opts) {
@@ -27,8 +16,8 @@ function Vis (opts) {
   opts = opts || {}
   opts.x = opts.x || 100
   opts.y = opts.y || 100
-  opts.w = opts.w || 10
-  opts.h = opts.h || 10
+  opts.w = opts.w || 50
+  opts.h = opts.h || 50
   
   opts.r = opts.r || 0
   opts.g = opts.g || 100
@@ -66,8 +55,8 @@ Vis.prototype.createElement = function() {
   var color = 'rgba('+[this.r,this.g,this.b,this.a].join(',')+')'
   var style = {
       position: 'absolute'
-    , left: this.x + 'px'
-    , top: this.y + 'px'
+    , left: this.x - this.w/2 + 'px'
+    , top: this.y - this.h/2 + 'px'
     , width: this.w + 'px'
     , height: this.h*3/4 + 'px'
     , background: color
