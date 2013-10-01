@@ -4,7 +4,7 @@
   "description": "Visualize your streams with Browserify!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "example": "node_modules/.bin/beefy example/index.js --open"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/davidguttman/stream-vis/issues"
+  },
+  "dependencies": {
+    "through": "~2.3.4"
   }
 }
