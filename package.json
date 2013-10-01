@@ -1,0 +1,23 @@
+{
+  "name": "stream-vis",
+  "version": "0.0.0",
+  "description": "Visualize your streams with Browserify!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/davidguttman/stream-vis.git"
+  },
+  "keywords": [
+    "streams",
+    "browserify",
+    "visualization"
+  ],
+  "author": "David Guttman",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/davidguttman/stream-vis/issues"
+  }
+}
